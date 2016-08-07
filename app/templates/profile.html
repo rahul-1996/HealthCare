@@ -1,0 +1,35 @@
+{% extends "prolayout.html" %}
+
+ {% block content %}
+
+   {% with messages = get_flashed_messages() %}
+         {% if messages %}
+            <ul>
+               {% for message in messages %}
+               <li<{{ message }}</li>
+               {% endfor %}
+            </ul>
+         {% endif %}
+      {% endwith %}
+
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>Welcome , {{ session['email'] }} !</h1>
+    <br> <br>
+    <p align="center"><a class="btn btn-primary btn-lg" href="{{ url_for('patient') }}" role="button">Add New Patient</a></p>
+  </div>
+</div>
+
+
+
+<table border ="1" class="table">
+  {% for row in test %}
+  <tr>
+    <th> {{ row }}</th>
+  </tr> 
+  {% endfor %}
+</table>
+
+
+{% endblock %}

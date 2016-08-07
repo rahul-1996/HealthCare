@@ -1,0 +1,29 @@
+{% extends "prolayout.html" %}
+
+
+{% block content %}
+
+
+<form class="form form-vertical" action="#" method="post" role="form">
+
+         {{ form.hidden_tag() }}
+     
+    {{ form.name.label }}
+    {{ form.name }}
+     
+    {{ form.phone.label }}
+    {{ form.phone }}
+
+    {{ form.medicines.label }}
+    {{ form.medicines }}
+
+    {{ form.time.label }}
+    {{ form.time}}
+    <p>  </p>
+
+    {{ form.submit }}
+
+</form>
+ 
+      
+{% endblock %}
